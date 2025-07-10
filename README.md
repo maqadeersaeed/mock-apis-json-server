@@ -102,8 +102,4 @@ npm run start:all
 | Tasks  | 7000  | Task management API |
 | Posts  | 7001  | Blog/post API       |
 
----
 
-## 📖 License
-
-MIT © Your Name

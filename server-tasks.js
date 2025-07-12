@@ -10,6 +10,8 @@ server.use(jsonServer.bodyParser);
 // ✅ Valid enums
 const validStatus = ["todo", "in-progress", "done", "canceled"];
 const validPriority = ["low", "medium", "high"];
+const validLabel = ["bug", "feature", "enhancement", "documentation"];
+
 
 // 🔢 Auto ID generator
 function getNextTaskNumber(db) {
@@ -20,6 +22,19 @@ function getNextTaskNumber(db) {
   });
   return ids.length ? Math.max(...ids) + 1 : 1;
 }
+
+server.get("/task-statuses", (req, res) => {
+  res.json(["todo", "in-progress", "done", "canceled"]);
+});
+
+server.get("/task-priorities", (req, res) => {
+  res.json(["low", "medium", "high"]);
+});
+
+server.get("/task-labels", (req, res) => {
+  res.json(["bug", "feature", "enhancement", "documentation"]);
+});
+
 
 // ✅ POST /tasks — enrich + validate
 server.post("/tasks", (req, res, next) => {
@@ -88,5 +103,5 @@ server.use((req, res, next) => {
 server.use(router);
 
 server.listen(7000, () => {
-  console.log("✅ JSON Server is running at http://localhost:7000");
+  console.log("✅ Tasks JSON Server is running at http://localhost:7000");
 });

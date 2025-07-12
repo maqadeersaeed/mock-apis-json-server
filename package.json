@@ -4,7 +4,8 @@
   "scripts": {
     "start:tasks": "node server-tasks.js",
     "start:posts": "node server-posts.js",
-    "start:all": "concurrently \"npm run start:tasks\" \"npm run start:posts\""
+    "start:users": "node server-users.js",
+    "start:all": "concurrently \"npm run start:tasks\" \"npm run start:posts\" \"npm run start:users\""
   },
   "dependencies": {
     "json-server": "^0.17.4"

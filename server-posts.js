@@ -100,5 +100,5 @@
 
   server.use(router);
   server.listen(7001, () => {
-    console.log("✅ JSON Server is running at http://localhost:7001");
+    console.log("✅ Posts JSON Server is running at http://localhost:7001");
   });
